@@ -37,6 +37,7 @@ add_library(endstone_core
         block/block_face.cpp
         block/block_state.cpp
         boss/boss_bar.cpp
+        command/block_command_sender.cpp
         command/command_lexer.cpp
         command/command_map.cpp
         command/command_origin_wrapper.cpp
@@ -53,6 +54,7 @@ add_library(endstone_core
         command/defaults/pardon_ip_command.cpp
         command/defaults/plugins_command.cpp
         command/defaults/reload_command.cpp
+        command/defaults/seed_command.cpp
         command/defaults/status_command.cpp
         command/defaults/version_command.cpp
         damage/damage_source.cpp

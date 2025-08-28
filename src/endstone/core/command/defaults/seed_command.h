@@ -14,22 +14,15 @@
 
 #pragma once
 
-#include <string>
+#include "endstone/core/command/endstone_command.h"
+#include "endstone/plugin/plugin.h"
 
-#include "bedrock/network/packet.h"
+namespace endstone::core {
 
-class AnimatePacket : public Packet {
+class SeedCommand : public EndstoneCommand {
 public:
-    enum class Action : int {
-        NoAction = 0,
-        Swing = 1,
-        WakeUp = 3,
-        CriticalHit = 4,
-        MagicCriticalHit = 5,
-    };
-
-    ActorRuntimeID runtime_id;
-    Action action;
-    float data;
+    SeedCommand();
+    bool execute(CommandSender &sender, const std::vector<std::string> &args) const override;
 };
-static_assert(sizeof(AnimatePacket) == 64);
+
+}  // namespace endstone::core

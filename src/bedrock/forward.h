@@ -30,6 +30,8 @@ class EndstoneServerNetworkEventHandler;
 }  // namespace core
 }  // namespace endstone
 
+using AttributeMessageType = int64_t;
+
 // Classes
 class ActionQueue;
 class ActorAnimationControllerGroup;
@@ -45,7 +47,6 @@ class ActorFactory;
 class ActorInteraction;
 class ActorSpawnRuleGroup;
 class ActorUnloadedChunkTransferEntry;
-class AdventureSettings;
 class AllowList;
 class AnimationComponent;
 class AppConfigs;
@@ -148,9 +149,11 @@ class MinecraftGameTest;
 class MobAnimationComponent;
 class MobHurtTimeComponent;
 class MolangVariable;
+class MoveInputComponent;
 class NavigationComponent;
 class NetworkChunkPublisher;
 class NetworkSessionOwner;
+class NetworkStatistics {};
 class Options;
 class PackManifestFactory;
 class PackMetadata;
@@ -179,6 +182,7 @@ class PropertyGroupManager;
 class PropertiesSettings;
 class ProjectileFactory;
 class RenderParams;
+class RepositoryPacks;
 class ResolvedItemIconInfo;
 class ResolvedTextObject;
 class ResourceDropsContext;
@@ -208,7 +212,7 @@ class SurfaceBuilderRegistry;
 class SubpackInfoCollection;
 class TextFilteringProcessor;
 class TestPackSource;
-class TaskGroup;
+class TaskGroup {};
 class TickingAreaList;
 class TickingAreasManager;
 class TintMapColor;
@@ -228,7 +232,7 @@ struct SyncedClientOptionsComponent;
 // Enums
 enum class ArmorMaterialType;
 enum class ArmorTextureType;
-enum BlockActorRendererId : unsigned int;
+enum BlockActorRendererId : std::uint8_t;
 enum class BlockRenderLayer : std::uint8_t;
 enum class BlockSupportType;
 enum class BurnOdds;
@@ -324,6 +328,11 @@ class SpawnPlacements;
 namespace MovementDataExtractionUtility {
 class SnapshotAccessor;
 }
+
+class PacketGroupDefinition {
+public:
+    struct PacketGroupBuilder;
+};
 
 // Template Classes
 template <typename A, typename B, typename C>
